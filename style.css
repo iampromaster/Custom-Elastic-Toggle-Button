@@ -1,0 +1,86 @@
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+#check {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+.button {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  background: #d5d5d5;
+  border-radius: 50px;
+  pointer-events: none;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+#check:checked ~ .button {
+  background: #4070f4;
+}
+
+.button .btn-thumb {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #4070f4;
+  border-radius: 50px;
+  top: 5px;
+  left: 5px;
+}
+
+#check:checked ~ .button .btn-thumb {
+  background: #f0f0f0;
+}
+
+@keyframes animOn {
+  0% {
+    width: 40px;
+  }
+  40% {
+    width: 70px;
+  }
+  100% {
+    width: 40px;
+    transform: translateX(50px);
+  }
+}
+@keyframes animOff {
+  0% {
+    width: 40px;
+    transform: translateX(50px);
+  }
+  60% {
+    width: 70px;
+  }
+  100% {
+    width: 40px;
+    transf`orm: translateX(0px);
+  }
+}
